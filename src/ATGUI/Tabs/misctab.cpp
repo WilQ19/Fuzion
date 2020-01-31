@@ -411,6 +411,13 @@ void Misc::RenderTab()
 
 				ImGui::EndPopup();
 			}
+			if (ImGui::Button(XORSTR("Set Vote-Name")))
+			{
+				std::string votekickGlitch = XORSTR("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+				votekickGlitch += std::string(nickname);
+				votekickGlitch += XORSTR("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+				NameChanger::SetName(votekickGlitch.c_str());
+			}			
 			ImGui::Columns(2, nullptr, true);
 			{
 				if (ImGui::Checkbox(XORSTR("Name Stealer"), &Settings::NameStealer::enabled))
